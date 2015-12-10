@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Find primefactors of a number</p>
+
+<button onclick="primeFactors()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function primeFactors()
+{
+var n = prompt("Enter a number");
+  var factors = [];
+  var divisor = 2;
+  var limit = Math.sqrt(n);
+  var isPrime = true;
+  if(n == 2 || n == 3)
+    {
+      factors.push(n);
+      return factors;
+    }
+   
+  while(divisor <= limit)
+    {
+      if(n % divisor == 0)
+        {
+          isPrime = false;
+        }
+      if(divisor == 2)
+        {
+          divisor ++;
+        }
+      else
+        {
+          divisor += 2;
+        }
+    }
+if(isPrime)
+{
+alert("Its a prime number");
+factors.push(n);
+}
+  
+   if(!isPrime)
+     {
+       divisor = 2;
+       while(n>=2)
+         {
+           if(n % divisor == 0)
+             {
+               factors.push(divisor);
+               n = n/divisor ;
+             }else
+               {
+                 if(divisor == 2)
+                   {
+                     divisor ++;
+                   }
+                 else
+                  {
+                    divisor += 2;
+                  }
+                }
+         }
+     }
+  alert(factors);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+/*
+ * This is a JavaScript Scratchpad.
+ *
+ * Enter some JavaScript, then Right Click or choose from the Execute Menu:
+ * 1. Run to evaluate the selected text (Ctrl+R),
+ * 2. Inspect to bring up an Object Inspector on the result (Ctrl+I), or,
+ * 3. Display to insert the result in a comment after the selection. (Ctrl+L)
+ */
+
+function primeFactors(n)
+{
+  var factors = [];
+  var divisor = 2;
+  var limit = Math.sqrt(n);
+  var isPrime = false;
+  if(n == 2 || n == 3)
+    {
+      factors.push(n);
+      return factors;
+    }
+   
+  while(divisor <= limit)
+    {
+      if(n % divisor == 0)
+        {
+          isPrime = true;
+          factors.push(n);
+        }
+      if(n == 2)
+        {
+          divisor ++;
+        }
+      else
+        {
+          divisor += 2;
+        }
+    }
+  
+   if(!isPrime)
+     {
+       divisor = 2;
+       while(divisor <= limit)
+         {
+           if(n % divisor == 0)
+             {
+               factors.push(divisor);
+               n = n/divisor ;
+             }else
+               {
+                 if(n == 2)
+        {
+          divisor ++;
+        }
+      else
+        {
+          divisor += 2;
+        }
+               }
+         }
+     }
+  alert(factors);
+}
