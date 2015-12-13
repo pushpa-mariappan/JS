@@ -1,0 +1,30 @@
+
+
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Find greatest common divisor of a number</p>
+        <button onclick="greatestCommonDivisor()">Try it</button>
+        <p id="demo"></p>
+        <script>
+            function greatestCommonDivisor()
+            {
+            	var a = prompt("Enter the first number");
+            	var b = prompt("Enter the second number");
+            	gcd(a,b);
+            }
+            
+            function gcd(a,b){
+            
+            	if(b == 0)	{
+            		 	alert("gcd :"+a);
+            	 		return a;
+            		}else 	{
+            		 		return gcd(b, a%b);
+            			}	
+            }
+            		
+        </script>
+    </body>
+</html>
+
