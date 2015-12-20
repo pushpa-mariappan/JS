@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function rand5(){
+        return Math.floor(1 + Math.random() * 4);
+      }
+      
+      function rand7()
+      {
+        
+        var vals = [
+          [ 1, 2, 3, 4, 5 ],
+          [ 6, 7, 1, 2, 3 ],
+          [ 4, 5, 6, 7, 1 ],
+          [ 2, 3, 4, 5, 6 ],
+          [ 7, 0, 0, 0, 0 ]
+        ];
+        
+        var result = 0;
+        while (result == 0)
+        {
+          var i = rand5()-1;
+          var j = rand5()-1;
+          
+          result = vals[i][j];
+          alert(result);
+          return result;
+        }
+        
+      }
+    </script>
+  </head>
+  <body>
+    
+    <a href="javascript:rand7()">try</a>
+  </body>
+  </html>
+  
