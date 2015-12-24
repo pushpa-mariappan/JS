@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    
+    <p>Rock, Papper, Scissors or Rope Game  <a href="javascript:funGame()">Play</a></p>
+
+    <script>
+        function getUserChoice() {
+            var userChoice = prompt("Do you choose rock, paper, scissors or rope?");
+            return userChoice;
+        }
+
+        function funGame() {
+           
+            var userChoice = getUserChoice();
+
+            if (userChoice != "rock" && userChoice != "paper" && userChoice != "scissors" && userChoice != "rope") {
+                console.log("Wrong choice. Choose rock, paper, scissors or rope");
+                userChoice = getUserChoice();
+            }
+
+
+            var computerChoice = Math.random();
+            if (computerChoice < 0.25) {
+                computerChoice = "rock";
+            } else if (computerChoice <= 0.50) {
+                computerChoice = "paper";
+            } else if (computerChoice <= 0.75) {
+                computerChoice = "scissors";
+            } else {
+                computerChoice = "rope";
+            }
+
+            var gameRule = [{
+                choice1: "rock",
+                choice2: "scissors",
+                win: "rock"
+            }, {
+                choice1: "rock",
+                choice2: "paper",
+                win: "paper"
+            }, {
+                choice1: "rock",
+                choice2: "rope",
+                win: "rope"
+            }, {
+                choice1: "paper",
+                choice2: "scissors",
+                win: "scissors"
+            }, {
+                choice1: "paper",
+                choice2: "rope",
+                win: "rope"
+            }, {
+                choice1: "rope",
+                choice2: "scissors",
+                win: "scissors"
+            }];
+
+            for (i = 0; i < gameRule.length; i++) {
+                var obj = gameRule[i];
+                if ((obj.choice1 == computerChoice && obj.choice2 == userChoice) || (obj.choice1 == userChoice && obj.choice2 == computerChoice)) {
+                    console.log("User: " + userChoice + "\nComputer: " + computerChoice + "\nWinner: " + obj.win);
+                }
+            }
+
+        }
+    </script>
+</body>
+
+</html>
